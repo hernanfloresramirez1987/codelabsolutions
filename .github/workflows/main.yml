@@ -32,11 +32,8 @@ jobs:
       #Route fiel renaming
       - name: Rename index for routing
         run: mv dist/codelabsolutions/browser/index.html dist/codelabsolutions/browser/404.html
-      #Deploy to Github pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          url_api: ${{ secrets.URL_API }}
-          defaultLanguage: ${{ secrets.defaultLanguage }}
           folder: dist/codelabsolutions/browser
-          branch: gh-pages  # Ajusta la carpeta de construcción según la configuración de tu proyecto
+          branch: gh-pages  # Puedes dejarlo si quieres usar otro branch, por defecto es gh-pages
