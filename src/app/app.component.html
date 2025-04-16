@@ -1,2 +1,41 @@
-<p-button label="holkas"/>
+<p-toolbar class="custom-toolbar">
+    <div class="p-toolbar-group-left">
+      <button pButton label="Inicio" icon="pi pi-home" class="p-button-text p-button-rounded"></button>
+      <button pButton label="Nosotros" icon="pi pi-users" class="p-button-text p-button-rounded"></button>
+      <button pButton label="Servicios" icon="pi pi-cog" class="p-button-text p-button-rounded"></button>
+    </div>
+  
+    <div class="p-toolbar-group-right">
+      <button pButton icon="pi pi-bell" class="p-button-rounded p-button-text"></button>
+      <p-avatar image="https://i.pravatar.cc/40" shape="circle" styleClass="ml-3" />
+    </div>
+  </p-toolbar>
+
+  <p-sidebar [visible]="sidebarVisible" position="left" [showCloseIcon]="true">
+    <h3>Menú de navegación</h3>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Acerca de</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </p-sidebar>
+
+  <div class="flex h-screen">
+    <div class="w-64 bg-gray-800 text-white p-6">
+        <ul>
+        <li class="px-8">asdf</li>
+        <li><a href="#" class="block py-2">Inicio</a></li>
+        <li><a href="#" class="block py-2">Servicios</a></li>
+        <li><a href="#" class="block py-2">Acerca de</a></li>
+        <li><a href="#" class="block py-2">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="flex-1 bg-gray-100 p-6">
+      <!-- Contenido principal -->
+    </div>
+  </div>
+
+
+  
 <router-outlet />

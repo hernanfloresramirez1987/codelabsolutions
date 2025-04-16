@@ -13,6 +13,7 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { CommonModule } from '@angular/common';
+import MyPreset from './mypreset';
 
 
 export const appConfig: ApplicationConfig = {
@@ -23,12 +24,13 @@ export const appConfig: ApplicationConfig = {
       BrowserAnimationsModule, 
     ),
     provideHttpClient(),
-    providePrimeNG({ /* options */ }),
-    // providePrimeNG({
-    //   theme: {
-    //     preset: Aura
-    //   }
-    // }),
+    // providePrimeNG({ /* options */ }),
+    providePrimeNG({
+      theme: {
+        // preset: Aura
+        preset: MyPreset
+      }
+    }),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     
