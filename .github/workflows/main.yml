@@ -1,4 +1,4 @@
-name: CI Codelab Solutions
+name: CI Codelabsolutions
 
 on:
   push:
@@ -12,28 +12,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.0.2
         with:
           node-version: '18'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build -- --configuration production
+      - name: Build app bundle
+        run: npm run build:prod
 
-      - name: Rename index.html to 404.html
-        run: |
-          mv dist/codelabsolutions/browser/index.html dist/codelabsolutions/browser/404.html
+      - name: Rename index.html for routing
+        run: mv dist/codelabsolutions/browser/index.html dist/codelabsolutions/browser/404.html
+
+      - name: Clean previous temp folders
+        run: rm -rf github-pages-deploy-action-temp-deployment-folder
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
           branch: gh-pages
           folder: dist/codelabsolutions/browser
-      - name: List build directory
-        run: ls -R dist  
+          token: ${{ secrets.GITHUB_TOKEN }}
