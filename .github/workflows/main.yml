@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: List build directory
+        run: ls -R dist  
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -31,7 +33,7 @@ jobs:
           mv dist/codelabsolutions/browser/index.html dist/codelabsolutions/browser/404.html
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+        uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
           branch: gh-pages
           folder: dist/codelabsolutions/browser
