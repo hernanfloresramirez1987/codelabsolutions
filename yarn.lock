@@ -112,6 +112,13 @@
     ora "5.4.1"
     rxjs "7.8.1"
 
+"@angular/animations@^19.2.6":
+  version "19.2.6"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-19.2.6.tgz#ebc0ef0e07e6819160985836a4cf6b25f0982d8e"
+  integrity sha512-0Ei7pKXpq0eoijakRB+TQCh2EB02ReYUzRkhdw5kbQLOlTftBWWnMNn2qRfKU6cra+RyRXU8c34ZkEw6K7hZAw==
+  dependencies:
+    tslib "^2.3.0"
+
 "@angular/build@19.2.7":
   version "19.2.7"
   resolved "https://registry.yarnpkg.com/@angular/build/-/build-19.2.7.tgz#828878f82ee793e0f1b0ea1d3d0b36ccc357383a"
@@ -225,7 +232,7 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/router@^19.2.0":
+"@angular/router@^19.2.6":
   version "19.2.6"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-19.2.6.tgz#e59745f18251ce163724d338d73def4b04919f4d"
   integrity sha512-8GqQinEd2Merh1RrUwmPW0EI/1CSwTL6F1xo4tAidqGBIIS22XyjtRb4mGkhhG2a8e7lEnrbl72RmuTjgThmeA==
