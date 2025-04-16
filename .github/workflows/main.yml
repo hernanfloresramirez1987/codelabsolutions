@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: List build directory
-        run: ls -R dist  
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -37,3 +35,5 @@ jobs:
         with:
           branch: gh-pages
           folder: dist/codelabsolutions/browser
+      - name: List build directory
+        run: ls -R dist  
