@@ -1,37 +1,42 @@
+# This is a basic workflow to help you get started with Actions
 name: CI Codelab Solutions
-
+# Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events but only for the "develop" branch
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # This workflow contains a single job called "build"
   build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout repository
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
+      # Setup NodeJs
+      - name: Setup NodeJs
+        uses: actions/setup-node@v4.0.2
+      #Install dependencies
+      - name: Install deps
         run: npm install
-
-      - name: Build project
-        run: npm run build -- --configuration production
-
-      - name: Rename index.html to 404.html
-        run: |
-          mv dist/codelabsolutions/browser/index.html dist/codelabsolutions/browser/404.html
-
+      #Build app for production
+      - name: Build app bundle
+        run: npm run build:prod
+      #Route fiel renaming
+      - name: Rename index for routing
+        run: mv dist/codelabsolutions/browser/index.html dist/codelabsolutions/browser/404.html
+      #Deploy to Github pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          branch: gh-pages
+          url_api: ${{ secrets.URL_API }}
+          defaultLanguage: ${{ secrets.defaultLanguage }}
           folder: dist/codelabsolutions/browser
+          branch: gh-pages  # Ajusta la carpeta de construcción según la configuración de tu proyecto
