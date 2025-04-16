@@ -1,41 +1,60 @@
-<p-toolbar class="custom-toolbar">
-    <div class="p-toolbar-group-left">
-      <button pButton label="Inicio" icon="pi pi-home" class="p-button-text p-button-rounded"></button>
-      <button pButton label="Nosotros" icon="pi pi-users" class="p-button-text p-button-rounded"></button>
-      <button pButton label="Servicios" icon="pi pi-cog" class="p-button-text p-button-rounded"></button>
-    </div>
-  
-    <div class="p-toolbar-group-right">
-      <button pButton icon="pi pi-bell" class="p-button-rounded p-button-text"></button>
-      <p-avatar image="https://i.pravatar.cc/40" shape="circle" styleClass="ml-3" />
-    </div>
-  </p-toolbar>
-
-  <p-sidebar [visible]="sidebarVisible" position="left" [showCloseIcon]="true">
-    <h3>Menú de navegación</h3>
-    <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Servicios</a></li>
-      <li><a href="#">Acerca de</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-  </p-sidebar>
-
-  <div class="flex h-screen">
-    <div class="w-64 bg-gray-800 text-white p-6">
-        <ul>
-        <li class="px-8">asdf</li>
-        <li><a href="#" class="block py-2">Inicio</a></li>
-        <li><a href="#" class="block py-2">Servicios</a></li>
-        <li><a href="#" class="block py-2">Acerca de</a></li>
-        <li><a href="#" class="block py-2">Contacto</a></li>
-      </ul>
-    </div>
-    <div class="flex-1 bg-gray-100 p-6">
-      <!-- Contenido principal -->
-    </div>
+<!-- <p-toolbar class="custom-toolbar">
+  <div class="p-toolbar-group-left">
+    <button pButton label="Inicio" icon="pi pi-home" class="p-button-text p-button-rounded"></button>
+    <button pButton label="Nosotros" icon="pi pi-users" class="p-button-text p-button-rounded"></button>
+    <button pButton label="Servicios" icon="pi pi-cog" class="p-button-text p-button-rounded"></button>
   </div>
 
+  <div class="p-toolbar-group-right">
+    <button pButton icon="pi pi-bell" class="p-button-rounded p-button-text"></button>
+    <p-avatar image="https://i.pravatar.cc/40" shape="circle" styleClass="ml-4" />
+  </div>
+</p-toolbar>
 
+<p-sidebar [visible]="sidebarVisible" position="left" [showCloseIcon]="true">
+  <h3>Menú de navegación</h3>
+  <ul>
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Servicios</a></li>
+    <li><a href="#">Acerca de</a></li>
+    <li><a href="#">Contacto</a></li>
+  </ul>
+</p-sidebar>
+
+
+<p-card class="max-w-sm mx-auto border border-surface-200 rounded-2xl shadow-lg bg-surface-0 text-primary-500">
+  <ng-template pTemplate="header">
+    <img class="w-full h-48 object-cover" src="https://source.unsplash.com/random/400x300" alt="Imagen random" />
+  </ng-template>
+
+  <ng-template pTemplate="title">
+    <h2 class="text-xl font-semibold text-primary-500">Mi Tarjeta Especial</h2>
+  </ng-template>
+
+  <ng-template pTemplate="subtitle">
+    <span class="text-sm text-surface-700">Diseñada con PrimeNG + TailwindCSS</span>
+  </ng-template>
+
+  <ng-template pTemplate="content">
+    <p class="text-surface-600 text-sm">
+      Este componente utiliza tus colores base azul oscuro y amarillo. Puedes extenderlo para productos, perfiles, etc.
+    </p>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      type="button"
+      label="Ver más"
+      class="w-full mt-4 bg-primary-500 hover:bg-primary-600 text-white font-medium"
+    > </button>
+  </ng-template>
+</p-card>
   
+
+<div class="bg-primary-500 text-white p-6 rounded-xl text-center">
+  ¡TailwindCSS con colores personalizados funciona! 🎉
+</div> -->
+
+
 <router-outlet />

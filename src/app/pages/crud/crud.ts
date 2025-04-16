@@ -55,7 +55,7 @@ interface ExportColumn {
         ConfirmDialogModule
     ],
     template: `
-        <p-toolbar styleClass="mb-6">
+        <p-toolbar styleClass="mb-12">
             <ng-template #start>
                 <p-button label="New" icon="pi pi-plus" severity="secondary" class="mr-2" (onClick)="openNew()" />
                 <p-button severity="secondary" label="Delete" icon="pi pi-trash" outlined (onClick)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length" />
@@ -148,26 +148,26 @@ interface ExportColumn {
 
         <p-dialog [(visible)]="productDialog" [style]="{ width: '450px' }" header="Product Details" [modal]="true">
             <ng-template #content>
-                <div class="flex flex-col gap-6">
-                    <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + product.image" [alt]="product.image" class="block m-auto pb-4" *ngIf="product.image" />
+                <div class="flex flex-col gap-12">
+                    <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + product.image" [alt]="product.image" class="block m-auto pb-12" *ngIf="product.image" />
                     <div>
-                        <label for="name" class="block font-bold mb-3">Name</label>
+                        <label for="name" class="block font-bold mb-6">Name</label>
                         <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus fluid />
                         <small class="text-red-500" *ngIf="submitted && !product.name">Name is required.</small>
                     </div>
                     <div>
-                        <label for="description" class="block font-bold mb-3">Description</label>
+                        <label for="description" class="block font-bold mb-6">Description</label>
                         <textarea id="description" pTextarea [(ngModel)]="product.description" required rows="3" cols="20" fluid></textarea>
                     </div>
 
                     <div>
-                        <label for="inventoryStatus" class="block font-bold mb-3">Inventory Status</label>
+                        <label for="inventoryStatus" class="block font-bold mb-6">Inventory Status</label>
                         <p-select [(ngModel)]="product.inventoryStatus" inputId="inventoryStatus" [options]="statuses" optionLabel="label" optionValue="label" placeholder="Select a Status" fluid />
                     </div>
 
                     <div>
-                        <span class="block font-bold mb-4">Category</span>
-                        <div class="grid grid-cols-12 gap-4">
+                        <span class="block font-bold mb-12">Category</span>
+                        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-6 grid-cols-12 gap-12">
                             <div class="flex items-center gap-2 col-span-6">
                                 <p-radiobutton id="category1" name="category" value="Accessories" [(ngModel)]="product.category" />
                                 <label for="category1">Accessories</label>
@@ -187,13 +187,13 @@ interface ExportColumn {
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-12 gap-4">
+                    <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-6 grid-cols-12 gap-12">
                         <div class="col-span-6">
-                            <label for="price" class="block font-bold mb-3">Price</label>
+                            <label for="price" class="block font-bold mb-6">Price</label>
                             <p-inputnumber id="price" [(ngModel)]="product.price" mode="currency" currency="USD" locale="en-US" fluid />
                         </div>
                         <div class="col-span-6">
-                            <label for="quantity" class="block font-bold mb-3">Quantity</label>
+                            <label for="quantity" class="block font-bold mb-6">Quantity</label>
                             <p-inputnumber id="quantity" [(ngModel)]="product.quantity" fluid />
                         </div>
                     </div>

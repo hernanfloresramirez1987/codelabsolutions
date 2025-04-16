@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+
+.bg-primary {
+    background-color: #0B1D36 !important;
+}
+
+.text-white {
+    color: #FFFFFF !important;
+}
+
+.p-button-warning {
+    background-color: #FBC331 !important;
+    border-color: #FBC331 !important;
+}

@@ -10,10 +10,10 @@ import { ToastModule } from 'primeng/toast';
     standalone: true,
     imports: [CommonModule, FileUploadModule, ToastModule, ButtonModule],
     template: `<p-toast />
-        <div class="grid grid-cols-12 gap-8">
+        <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-6 grid-cols-12 gap-20">
             <div class="col-span-full lg:col-span-6">
                 <div class="card">
-                    <div class="font-semibold text-xl mb-4">Advanced</div>
+                    <div class="font-semibold text-xl mb-12">Advanced</div>
                     <p-fileupload name="demo[]" (onUpload)="onUpload($event)" [multiple]="true" accept="image/*" maxFileSize="1000000" mode="advanced" url="https://www.primefaces.org/cdn/api/upload.php">
                         <ng-template #empty>
                             <div>Drag and drop files to here to upload.</div>
@@ -28,8 +28,8 @@ import { ToastModule } from 'primeng/toast';
             </div>
             <div class="col-span-full lg:col-span-6">
                 <div class="card">
-                    <div class="font-semibold text-xl mb-4">Basic</div>
-                    <div class="flex flex-col gap-4 items-center justify-center">
+                    <div class="font-semibold text-xl mb-12">Basic</div>
+                    <div class="flex flex-col gap-12 items-center justify-center">
                         <p-fileupload #fu mode="basic" chooseLabel="Choose" chooseIcon="pi pi-upload" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onUpload($event)" />
                         <p-button label="Upload" (onClick)="fu.upload()" severity="secondary" />
                     </div>

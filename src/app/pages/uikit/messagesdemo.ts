@@ -12,10 +12,10 @@ import { ToastModule } from 'primeng/toast';
     standalone: true,
     imports: [CommonModule, ToastModule, ButtonModule, InputTextModule, MessageModule, FormsModule],
     template: `
-        <div class="flex flex-col md:flex-row gap-8">
+        <div class="flex flex-col md:flex-row gap-20">
             <div class="md:w-1/2">
                 <div class="card">
-                    <div class="font-semibold text-xl mb-4">Toast</div>
+                    <div class="font-semibold text-xl mb-12">Toast</div>
                     <div class="flex flex-wrap gap-2">
                         <p-button (click)="showSuccessViaToast()" label="Success" severity="success" />
                         <p-button (click)="showInfoViaToast()" label="Info" severity="info" />
@@ -24,8 +24,8 @@ import { ToastModule } from 'primeng/toast';
                         <p-toast />
                     </div>
 
-                    <div class="font-semibold text-xl mt-4 mb-4">Inline</div>
-                    <div class="flex flex-col mb-4 gap-1">
+                    <div class="font-semibold text-xl mt-12 mb-12">Inline</div>
+                    <div class="flex flex-col mb-12 gap-1">
                         <input pInputText [(ngModel)]="username" placeholder="Username" aria-label="username" class="ng-dirty ng-invalid" />
                         <p-message severity="error" variant="simple" size="small">Username is required</p-message>
                     </div>
@@ -37,8 +37,8 @@ import { ToastModule } from 'primeng/toast';
             </div>
             <div class="md:w-1/2">
                 <div class="card">
-                    <div class="font-semibold text-xl mb-4">Message</div>
-                    <div class="flex flex-col gap-4 mb-4">
+                    <div class="font-semibold text-xl mb-12">Message</div>
+                    <div class="flex flex-col gap-12 mb-12">
                         <p-message severity="success">Success Message</p-message>
                         <p-message severity="info">Info Message</p-message>
                         <p-message severity="warn">Warn Message</p-message>

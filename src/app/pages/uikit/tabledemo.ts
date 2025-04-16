@@ -45,7 +45,7 @@ interface expandedRows {
         IconFieldModule
     ],
     template: ` <div class="card">
-            <div class="font-semibold text-xl mb-4">Filtering</div>
+            <div class="font-semibold text-xl mb-12">Filtering</div>
             <p-table
                 #dt1
                 [value]="customers1"
@@ -59,7 +59,7 @@ interface expandedRows {
                 responsiveLayout="scroll"
             >
                 <ng-template #caption>
-                    <div class="flex justify-between items-center flex-column sm:flex-row">
+                    <div class="flex justify-between items-center flex-col sm:flex-row">
                         <button pButton label="Clear" class="p-button-outlined mb-2" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
                         <p-iconfield iconPosition="left" class="ml-auto">
                             <p-inputicon>
@@ -88,7 +88,7 @@ interface expandedRows {
                                 Agent
                                 <p-columnFilter field="representative" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
                                     <ng-template #header>
-                                        <div class="px-3 pt-3 pb-0">
+                                        <div class="px-6 pt-6 pb-0">
                                             <span class="font-bold">Agent Picker</span>
                                         </div>
                                     </ng-template>
@@ -136,7 +136,7 @@ interface expandedRows {
                                 Activity
                                 <p-columnFilter field="activity" matchMode="between" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
                                     <ng-template #filter let-filter="filterCallback">
-                                        <p-slider [ngModel]="activityValues" [range]="true" (onSlideEnd)="filter($event.values)" styleClass="m-3" [style]="{ 'min-width': '12rem' }"></p-slider>
+                                        <p-slider [ngModel]="activityValues" [range]="true" (onSlideEnd)="filter($event.values)" styleClass="m-6" [style]="{ 'min-width': '12rem' }"></p-slider>
                                         <div class="flex items-center justify-between px-2">
                                             <span>{{ activityValues[0] }}</span>
                                             <span>{{ activityValues[1] }}</span>
@@ -201,10 +201,10 @@ interface expandedRows {
         </div>
 
         <div class="card">
-            <div class="font-semibold text-xl mb-4">Frozen Columns</div>
+            <div class="font-semibold text-xl mb-12">Frozen Columns</div>
             <p-togglebutton [(ngModel)]="balanceFrozen" [onIcon]="'pi pi-lock'" offIcon="pi pi-lock-open" [onLabel]="'Balance'" offLabel="Balance" />
 
-            <p-table [value]="customers2" [scrollable]="true" scrollHeight="400px" styleClass="mt-4">
+            <p-table [value]="customers2" [scrollable]="true" scrollHeight="400px" styleClass="mt-12">
                 <ng-template #header>
                     <tr>
                         <th style="min-width:200px" pFrozenColumn class="font-bold">Name</th>
@@ -237,7 +237,7 @@ interface expandedRows {
         </div>
 
         <div class="card">
-            <div class="font-semibold text-xl mb-4">Row Expansion</div>
+            <div class="font-semibold text-xl mb-12">Row Expansion</div>
             <p-table [value]="products" dataKey="name" [expandedRowKeys]="expandedRows" responsiveLayout="scroll">
                 <ng-template #caption>
                     <button pButton icon="pi pi-fw {{ isExpanded ? 'pi-minus' : 'pi-plus' }}" label="{{ isExpanded ? 'Collapse All' : 'Expand All' }}" (click)="expandAll()"></button>
@@ -289,7 +289,7 @@ interface expandedRows {
                 <ng-template #rowexpansion let-product>
                     <tr>
                         <td colspan="7">
-                            <div class="p-3">
+                            <div class="p-6">
                                 <p-table [value]="product.orders" dataKey="id" responsiveLayout="scroll">
                                     <ng-template #header>
                                         <tr>
@@ -344,7 +344,7 @@ interface expandedRows {
         </div>
 
         <div class="card">
-            <div class="font-semibold text-xl mb-4">Grouping</div>
+            <div class="font-semibold text-xl mb-12">Grouping</div>
             <p-table [value]="customers3" sortField="representative.name" sortMode="single" [scrollable]="true" scrollHeight="400px" rowGroupMode="subheader" groupRowsBy="representative.name" [tableStyle]="{ 'min-width': '60rem' }">
                 <ng-template #header>
                     <tr>

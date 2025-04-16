@@ -6,6 +6,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { ToolbarModule } from 'primeng/toolbar';
 import { SidebarModule } from 'primeng/sidebar';
 import { FormsModule } from '@angular/forms';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     MenubarModule,
     AvatarModule,
     SidebarModule,
-    FormsModule
+    FormsModule,
+    CardModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

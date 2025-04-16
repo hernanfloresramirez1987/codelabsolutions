@@ -30,14 +30,14 @@ import { Product, ProductService } from '../service/product.service';
                 <ng-template #list let-items>
                     <div class="flex flex-col">
                         <div *ngFor="let item of items; let i = index">
-                            <div class="flex flex-col sm:flex-row sm:items-center p-6 gap-4" [ngClass]="{ 'border-t border-surface': i !== 0 }">
+                            <div class="flex flex-col sm:flex-row sm:items-center p-12 gap-12" [ngClass]="{ 'border-t border-surface': i !== 0 }">
                                 <div class="md:w-40 relative">
                                     <img class="block xl:block mx-auto rounded w-full" src="https://primefaces.org/cdn/primevue/images/product/{{ item.image }}" [alt]="item.name" />
                                     <div class="absolute bg-black/70 rounded-border" [style]="{ left: '4px', top: '4px' }">
                                         <p-tag [value]="item.inventoryStatus" [severity]="getSeverity(item)"></p-tag>
                                     </div>
                                 </div>
-                                <div class="flex flex-col md:flex-row justify-between md:items-center flex-1 gap-6">
+                                <div class="flex flex-col md:flex-row justify-between md:items-center flex-1 gap-12">
                                     <div class="flex flex-row md:flex-col justify-between items-start gap-2">
                                         <div>
                                             <span class="font-medium text-surface-500 dark:text-surface-400 text-sm">{{ item.category }}</span>
@@ -58,7 +58,7 @@ import { Product, ProductService } from '../service/product.service';
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex flex-col md:items-end gap-8">
+                                    <div class="flex flex-col md:items-end gap-20">
                                         <span class="text-xl font-semibold">$ {{ item.price }}</span>
                                         <div class="flex flex-row-reverse md:flex-row gap-2">
                                             <p-button icon="pi pi-heart" styleClass="h-full" [outlined]="true"></p-button>
@@ -72,10 +72,10 @@ import { Product, ProductService } from '../service/product.service';
                 </ng-template>
 
                 <ng-template #grid let-items>
-                    <div class="grid grid-cols-12 gap-4">
+                    <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-6 grid-cols-12 gap-12">
                         <div *ngFor="let item of items; let i = index" class="col-span-12 sm:col-span-6 lg:col-span-4 p-2">
-                            <div class="p-6 border border-surface-200 dark:border-surface-700 bg-surface-0 dark:bg-surface-900 rounded flex flex-col">
-                                <div class="bg-surface-50 flex justify-center rounded p-6">
+                            <div class="p-12 border border-surface-200 dark:border-surface-700 bg-surface-0 dark:bg-surface-900 rounded flex flex-col">
+                                <div class="bg-surface-50 flex justify-center rounded p-12">
                                     <div class="relative mx-auto">
                                         <img class="rounded w-full" src="https://primefaces.org/cdn/primevue/images/product/{{ item.image }}" [alt]="item.name" style="max-width: 300px" />
                                         <div class="absolute bg-black/70 rounded-border" [style]="{ left: '4px', top: '4px' }">
@@ -104,7 +104,7 @@ import { Product, ProductService } from '../service/product.service';
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex flex-col gap-6 mt-6">
+                                    <div class="flex flex-col gap-12 mt-12">
                                         <span class="text-2xl font-semibold">$ {{ item.price }}</span>
                                         <div class="flex gap-2">
                                             <p-button icon="pi pi-shopping-cart" label="Buy Now" [disabled]="item.inventoryStatus === 'OUTOFSTOCK'" class="flex-auto whitespace-nowrap" styleClass="w-full"></p-button>
@@ -122,7 +122,7 @@ import { Product, ProductService } from '../service/product.service';
         <div class="flex flex-col lg:flex-row gap-20">
             <div class="lg:w-2/3">
                 <div class="card">
-                    <div class="font-semibold text-xl mb-4">PickList</div>
+                    <div class="font-semibold text-xl mb-12">PickList</div>
                     <p-pick-list [source]="sourceCities" [target]="targetCities" breakpoint="1400px">
                         <ng-template #item let-item>
                             {{ item.name }}
@@ -133,7 +133,7 @@ import { Product, ProductService } from '../service/product.service';
 
             <div class="lg:w-1/3">
                 <div class="card">
-                    <div class="font-semibold text-xl mb-4">OrderList</div>
+                    <div class="font-semibold text-xl mb-12">OrderList</div>
                     <p-orderlist [value]="orderCities" dataKey="id" breakpoint="575px">
                         <ng-template #option let-option>
                             {{ option.name }}
@@ -153,9 +153,9 @@ import { Product, ProductService } from '../service/product.service';
     providers: [ProductService]
 })
 export class ListDemo {
-    layout: 'list' | 'grid' = 'list';
+    layout: 'list' | 'grid grid-cols-12 gap-4 grid-cols-12 gap-6' = 'list';
 
-    options = ['list', 'grid'];
+    options = ['list', 'grid grid-cols-12 gap-4 grid-cols-12 gap-6'];
 
     products: Product[] = [];
 

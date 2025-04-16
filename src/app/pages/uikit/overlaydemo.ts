@@ -16,10 +16,10 @@ import { Product, ProductService } from '../service/product.service';
     selector: 'app-overlay-demo',
     standalone: true,
     imports: [ToastModule, DialogModule, ButtonModule, DrawerModule, PopoverModule, ConfirmPopupModule, InputTextModule, FormsModule, TooltipModule, TableModule, ToastModule],
-    template: ` <div class="flex flex-col md:flex-row gap-8">
+    template: ` <div class="flex flex-col md:flex-row gap-20">
         <div class="md:w-1/2">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Dialog</div>
+                <div class="font-semibold text-xl mb-12">Dialog</div>
                 <p-dialog header="Dialog" [(visible)]="display" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '30vw' }" [modal]="true">
                     <p class="leading-normal m-0">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -33,7 +33,7 @@ import { Product, ProductService } from '../service/product.service';
             </div>
 
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Popover</div>
+                <div class="font-semibold text-xl mb-12">Popover</div>
                 <div class="flex flex-wrap gap-2">
                     <p-button type="button" label="Show" (click)="toggleDataTable(op2, $event)" />
                     <p-popover #op2 id="overlay_panel" [style]="{ width: '450px' }">
@@ -59,8 +59,8 @@ import { Product, ProductService } from '../service/product.service';
             </div>
 
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Tooltip</div>
-                <div class="inline-flex gap-4">
+                <div class="font-semibold text-xl mb-12">Tooltip</div>
+                <div class="inline-flex gap-12">
                     <input pInputText type="text" placeholder="Username" pTooltip="Your username" />
                     <p-button type="button" label="Save" pTooltip="Click to proceed" />
                 </div>
@@ -68,7 +68,7 @@ import { Product, ProductService } from '../service/product.service';
         </div>
         <div class="md:w-1/2">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Drawer</div>
+                <div class="font-semibold text-xl mb-12">Drawer</div>
                 <p-drawer [(visible)]="visibleLeft" header="Drawer">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -112,17 +112,17 @@ import { Product, ProductService } from '../service/product.service';
             </div>
 
             <div class="card">
-                <div class="font-semibold text-xl mb-4">ConfirmPopup</div>
+                <div class="font-semibold text-xl mb-12">ConfirmPopup</div>
                 <p-confirmpopup></p-confirmpopup>
                 <p-button #popup (click)="confirm($event)" icon="pi pi-check" label="Confirm" class="mr-2"></p-button>
             </div>
 
             <div class="card">
-                <div class="font-semibold text-xl mb-4">ConfirmDialog</div>
+                <div class="font-semibold text-xl mb-12">ConfirmDialog</div>
                 <p-button label="Delete" icon="pi pi-trash" severity="danger" [style]="{ width: 'auto' }" (click)="openConfirmation()" />
                 <p-dialog header="Confirmation" [(visible)]="displayConfirmation" [style]="{ width: '350px' }" [modal]="true">
                     <div class="flex items-center justify-center">
-                        <i class="pi pi-exclamation-triangle mr-4" style="font-size: 2rem"> </i>
+                        <i class="pi pi-exclamation-triangle mr-12" style="font-size: 2rem"> </i>
                         <span>Are you sure you want to proceed?</span>
                     </div>
                     <ng-template #footer>

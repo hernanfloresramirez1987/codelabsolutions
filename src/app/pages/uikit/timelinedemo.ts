@@ -8,10 +8,10 @@ import { ButtonModule } from 'primeng/button';
     selector: 'app-timeline-demo',
     standalone: true,
     imports: [CommonModule, TimelineModule, ButtonModule, CardModule],
-    template: ` <div class="grid grid-cols-12 gap-8">
+    template: ` <div class="grid grid-cols-12 gap-4 grid-cols-12 gap-6 grid-cols-12 gap-20">
         <div class="col-span-6">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Left Align</div>
+                <div class="font-semibold text-xl mb-12">Left Align</div>
                 <p-timeline [value]="events1">
                     <ng-template #content let-event>
                         {{ event.status }}
@@ -21,7 +21,7 @@ import { ButtonModule } from 'primeng/button';
         </div>
         <div class="col-span-6">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Right Align</div>
+                <div class="font-semibold text-xl mb-12">Right Align</div>
                 <p-timeline [value]="events1" align="right">
                     <ng-template #content let-event>
                         {{ event.status }}
@@ -31,7 +31,7 @@ import { ButtonModule } from 'primeng/button';
         </div>
         <div class="col-span-6">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Alternate Align</div>
+                <div class="font-semibold text-xl mb-12">Alternate Align</div>
                 <p-timeline [value]="events1" align="alternate">
                     <ng-template #content let-event>
                         {{ event.status }}
@@ -41,7 +41,7 @@ import { ButtonModule } from 'primeng/button';
         </div>
         <div class="col-span-6">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Opposite Content</div>
+                <div class="font-semibold text-xl mb-12">Opposite Content</div>
                 <p-timeline [value]="events1">
                     <ng-template #content let-event>
                         <small class="p-text-secondary">{{ event.date }}</small>
@@ -54,10 +54,10 @@ import { ButtonModule } from 'primeng/button';
         </div>
         <div class="col-span-full">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Templating</div>
+                <div class="font-semibold text-xl mb-12">Templating</div>
                 <p-timeline [value]="events1" align="alternate" styleClass="customized-timeline">
                     <ng-template #marker let-event>
-                        <span class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm" [style]="{ 'background-color': event.color }">
+                        <span class="flex w-8/12 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm" [style]="{ 'background-color': event.color }">
                             <i [class]="event.icon"></i>
                         </span>
                     </ng-template>
@@ -76,7 +76,7 @@ import { ButtonModule } from 'primeng/button';
         </div>
         <div class="col-span-full">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Horizontal</div>
+                <div class="font-semibold text-xl mb-12">Horizontal</div>
                 <div class="font-semibold mb-2">Top Align</div>
                 <p-timeline [value]="events2" layout="horizontal" align="top">
                     <ng-template #content let-event>
@@ -84,14 +84,14 @@ import { ButtonModule } from 'primeng/button';
                     </ng-template>
                 </p-timeline>
 
-                <div class="font-semibold mt-4 mb-2">Bottom Align</div>
+                <div class="font-semibold mt-12 mb-2">Bottom Align</div>
                 <p-timeline [value]="events2" layout="horizontal" align="bottom">
                     <ng-template #content let-event>
                         {{ event }}
                     </ng-template>
                 </p-timeline>
 
-                <div class="font-semibold mt-4 mb-2">Alternate Align</div>
+                <div class="font-semibold mt-12 mb-2">Alternate Align</div>
                 <p-timeline [value]="events2" layout="horizontal" align="alternate">
                     <ng-template #content let-event>
                         {{ event }}

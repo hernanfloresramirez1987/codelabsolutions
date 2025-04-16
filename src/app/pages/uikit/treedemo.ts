@@ -17,7 +17,7 @@ import { NodeService } from '../service/node.service';
         </div>
 
         <div class="card">
-            <div class="font-semibold text-xl mb-4">TreeTable</div>
+            <div class="font-semibold text-xl mb-12">TreeTable</div>
             <p-treetable [value]="treeTableValue" [columns]="cols" selectionMode="checkbox" [(selectionKeys)]="selectedTreeTableValue" dataKey="key" [scrollable]="true" [tableStyle]="{ 'min-width': '50rem' }">
                 <ng-template #header let-columns>
                     <tr>
