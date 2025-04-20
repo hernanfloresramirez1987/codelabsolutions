@@ -26,8 +26,8 @@ export const appConfig: ApplicationConfig = {
     // providePrimeNG({ /* options */ }),
     providePrimeNG({
       theme: {
-        // preset: Aura
-        preset: MyPreset
+        preset: Aura
+        // preset: MyPreset
       }
     }),
     provideExperimentalZonelessChangeDetection(),
