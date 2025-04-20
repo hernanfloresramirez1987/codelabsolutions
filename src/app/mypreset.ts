@@ -116,68 +116,71 @@ const Noir = definePreset(Aura, {
 //   });
   
 const MyPreset = definePreset(Aura, {
-    semantic: {
-      colorScheme: {
-        light: {
-          surface: {
-            0: '#FFFFFF',
-            50: '#F8F9FD', // Azul muy claro
-            100: '#D9E2F6',
-            200: '#B1C6F1',
-            300: '#88A9EB',
-            400: '#5F8AE5',
-            500: '#3365D8', // Azul principal
-            600: '#2A4FB0',
-            700: '#1F3C88',
-            800: '#162764',
-            900: '#0B1A3E',
-            950: '#060E1F'
+
+    
+      semantic: {
+        colorScheme: {
+          light: {
+            surface: {
+              0: "#FFFFFF",
+              50: "#FDF7F9", 
+              100: "#F8D9E0",
+              200: "#F1B1C3",
+              300: "#EB88A6",
+              400: "#E55F89",
+              500: "#D83367", 
+              600: "#B02A54",
+              700: "#882043",
+              800: "#64162F",
+              900: "#3E0B1D",
+              950: "#1F060F"
+            },
+            primary: {
+              50: "#FFF0F2",
+              100: "#FFD6DC",
+              200: "#FFADBA",
+              300: "#FF8597",
+              400: "#FF5C74",
+              500: "#E63958", 
+              600: "#BF2F49",
+              700: "#99253A",
+              800: "#731B2B",
+              900: "#4D111C",
+              950: "#2B080F"
+            }
           },
-          primary: {
-            50: '#FFF9DB', // Amarillo muy claro
-            100: '#FFEB9F',
-            200: '#FFDC63',
-            300: '#FFCD27',
-            400: '#FFBF00', // Amarillo fuerte
-            500: '#FFB300', // Amarillo principal
-            600: '#E69A00',
-            700: '#CC7F00',
-            800: '#B26700',
-            900: '#8F4F00',
-            950: '#5F2A00'
-          }
-        },
-        dark: {
-          surface: {
-            0: '#0A1F33',
-            50: '#11263F',
-            100: '#1A2E4A',
-            200: '#233650',
-            300: '#2D4161',
-            400: '#3F4B73',
-            500: '#3365D8', // Azul principal en dark mode
-            600: '#2A4FB0',
-            700: '#1F3C88',
-            800: '#162764',
-            900: '#0B1A3E',
-            950: '#060E1F'
-          },
-          primary: {
-            50: '#FFF9DB', // Amarillo muy claro
-            100: '#FFEB9F',
-            200: '#FFDC63',
-            300: '#FFCD27',
-            400: '#FFBF00', // Amarillo fuerte
-            500: '#FFB300', // Amarillo principal
-            600: '#E69A00',
-            700: '#CC7F00',
-            800: '#B26700',
-            900: '#8F4F00',
-            950: '#5F2A00'
+          dark: {
+            surface: {
+              0: '#0A1F33',
+              50: '#11263F',
+              100: '#1A2E4A',
+              200: '#233650',
+              300: '#2D4161',
+              400: '#3F4B73',
+              500: '#3365D8', // Azul principal en dark mode
+              600: '#2A4FB0',
+              700: '#1F3C88',
+              800: '#162764',
+              900: '#0B1A3E',
+              950: '#060E1F'
+            },
+            primary: {
+              50: "#FFF0F2",
+              100: "#FFD6DC",
+              200: "#FFADBA",
+              300: "#FF8597",
+              400: "#FF5C74",
+              500: "#E63958", 
+              600: "#BF2F49",
+              700: "#99253A",
+              800: "#731B2B",
+              900: "#4D111C",
+              950: "#2B080F"
+            }
           }
         }
       }
-    }
+    
   });
 
 export default MyPreset;
