@@ -22,7 +22,6 @@
     "@primeng/themes": "^19.0.10",
     "@tsparticles/angular": "^3.0.0",
     "ngx-particlesjs": "^2.0.1",
-    "particles.js": "^2.0.0",
     "primeicons": "^7.0.0",
     "primeng": "^19.0.10",
     "rxjs": "~7.8.0",
