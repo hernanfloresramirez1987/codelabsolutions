@@ -18,7 +18,6 @@ import MyPreset from './mypreset';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideAnimationsAsync(),
     importProvidersFrom(
       CommonModule, 
       BrowserAnimationsModule, 
