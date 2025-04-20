@@ -7,5 +7,6 @@ export const routes: Routes = [
     // { path: 'crud', component: Crud },
     // { path: 'empty', component: Empty },
     { path: '', loadComponent: () => import('./pages/home/home.component')},
+    { path: 'guest', loadComponent: () => import('./pages/guest/guest.component')},
     { path: '**', redirectTo: '/notfound' }
 ];
