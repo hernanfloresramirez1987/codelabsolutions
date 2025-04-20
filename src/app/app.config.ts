@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideExperimentalZonelessChangeDetection, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 
@@ -30,7 +30,8 @@ export const appConfig: ApplicationConfig = {
         preset: MyPreset
       }
     }),
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideExperimentalZonelessChangeDetection(),
+    // provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     
     MessageService,
