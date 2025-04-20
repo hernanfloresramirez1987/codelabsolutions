@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ClickEvent, Container, HoverEvent, loadFont, MoveDirection, OutMode } from "@tsparticles/engine";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+// import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
+
 import { NgParticlesService, NgxParticlesModule } from "@tsparticles/angular";
 import { ReplaySubject } from 'rxjs';
 
@@ -35,7 +37,7 @@ export default class HomeComponent implements OnInit{
         detect_on: "canvas",
         events: {
           onhover: {
-            enable: false,
+            enable: false,  
             mode: "repulse"
           },
           onclick: {
@@ -117,25 +119,19 @@ export default class HomeComponent implements OnInit{
 
     constructor(private readonly ngParticlesService: NgParticlesService) {}
 
+  ngOnInit(): void {
+    this.ngParticlesService.init(async (engine) => {
+      console.log(engine);
 
-    
-
-    ngOnInit(): void {
-      this.ngParticlesService.init(async (engine) => {
-        // await loadFont();
-        await loadSlim(engine);
+      // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
+      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+      // starting from v2 you can add only the features you need reducing the bundle size
+      //await loadFull(engine);
+      await loadSlim(engine);
     });
-        // this.ngParticlesService.init(async () => {
-            // console.log(engine);
+  }
 
-            // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
-            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-            // starting from v2 you can add only the features you need reducing the bundle size
-        //     await loadSlim(engine);
-        // });
-    }
-
-    particlesLoaded(container: Container): void {
-        console.log(container);
-    }
+  particlesLoaded(container: Container): void {
+    console.log(container);
+  }
 }
