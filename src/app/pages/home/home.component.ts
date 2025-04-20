@@ -21,103 +21,108 @@ declare const particlesJS: any;
 export default class HomeComponent implements OnInit{
   id = "tsparticles";
 
-    /* Starting from 1.19.0 you can use a remote url (AJAX request) to a JSON with the configuration */
-    particlesUrl = "http://foo.bar/particles.json";
+  /* Starting from 1.19.0 you can use a remote url (AJAX request) to a JSON with the configuration */
+  particlesUrl = "http://foo.bar/particles.json";
 
-    /* or the classic JavaScript object */
-    particlesOptions: any = {
-      // Elimina o deja el background como transparente
-      background: {
-        color: {
-          value: ["blue", "yellow", "crimson", "green"],
-        },
+  /* or the classic JavaScript object */
+  particlesOptions: any = {
+    // Elimina o deja el background como transparente
+    // background: {
+    //   color: {
+    //     value: ["navy", "yellow", "crimson", "green"],
+    //   },
+    // },
+    background: {
+      color: {
+        value: "transparent", // o simplemente no pongas nada
       },
-      fpsLimit: 120,
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: {
-            enable: false,  
-            mode: "repulse"
-          },
-          onclick: {
-            enable: true,
-            mode: "push"
-          },
-          resize: true
+    },
+    fpsLimit: 120,
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: false,  
+          mode: "repulse"
         },
-        modes: {
-          grab: {
-            distance: 800,
-            line_linked: {
-              opacity: 1
-            }
-          },
-          bubble: {
-            distance: 800,
-            size: 80,
-            duration: 2,
-            opacity: 8,
-            speed: 5
-          },
-          repulse: {
-            distance: 400,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          },
-          remove: {
-            particles_nb: 2
+        onclick: {
+          enable: false,
+          mode: "push"
+        },
+        resize: true
+      },
+      modes: {
+        grab: {
+          distance: 800,
+          line_linked: {
+            opacity: 1
           }
+        },
+        bubble: {
+          distance: 800,
+          size: 80,
+          duration: 2,
+          opacity: 8,
+          speed: 5
+        },
+        repulse: {
+          distance: 400,
+          duration: 0.4
+        },
+        push: {
+          particles_nb: 4
+        },
+        remove: {
+          particles_nb: 2
+        }
+      }
+    },
+    particles: {
+      color: {
+        value: ["#34495e"], //"#000080", "#cccccc", "#dc143c", "#008000"]
+      },
+      links: {
+        color: "#444444",
+        distance: 150,
+        enable: true,
+        opacity: 0.5,
+        width: 1,
+      },
+      move: {
+          enable: true,
+          speed: 3,
+          direction: "none",
+          random: true,
+          straight: true,
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
         }
       },
-      particles: {
-        color: {
-          value: "#a9b9c9",
-        },
-        links: {
-          color: "#444444",
-          distance: 150,
+      number: {
+        density: {
           enable: true,
-          opacity: 0.5,
-          width: 1,
+          area: 800,
         },
-        move: {
-            enable: true,
-            speed: 3,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200
-          }
-        },
-        number: {
-          density: {
-            enable: true,
-            area: 800,
-          },
-          value: 80,
-        },
-        opacity: {
-          value: 0.5,
-        },
-        shape: {
-          type: "circle",
-        },
-        size: {
-          value: { min: 1, max: 5 },
-        },
+        value: 80,
       },
-      detectRetina: false,
-    };
+      opacity: {
+        value: 0.5,
+      },
+      shape: {
+        type: "circle",
+      },
+      size: {
+        value: { min: 1, max: 5 },
+      },
+    },
+    detectRetina: false,
+  };
 
-    constructor(private readonly ngParticlesService: NgParticlesService) {}
+  constructor(private readonly ngParticlesService: NgParticlesService) {}
 
   ngOnInit(): void {
     this.ngParticlesService.init(async (engine) => {

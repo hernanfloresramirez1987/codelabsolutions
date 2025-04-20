@@ -4,50 +4,24 @@
 //     width: 100%;
 //     height: 100vh;
 //     overflow: hidden;
+//     background: linear-gradient(135deg, blue, yellow, crimson, green);
+//     background-size: 400% 400%;
+//     animation: backgroundAnimation 15s ease infinite;
 // }
-// ngx-particles {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     z-index: 0; // fondo
-//     width: 100%;
-//     height: 100%;
-// }
-// .contenido {
-//     position: relative;
-//     z-index: 1;
-//     color: white; // para que se vea encima del fondo oscuro
-//     text-align: center;
-//     padding-top: 100px;
-// }
-:host {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(135deg, blue, yellow, crimson, green);
-    background-size: 400% 400%;
-    animation: backgroundAnimation 15s ease infinite;
-}
-
-@keyframes backgroundAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-ngx-particles {
-    position: absolute;
+.particles-container {
+    position: fixed; // fondo fijo
     top: 0;
     left: 0;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; // detrás de todo
+    pointer-events: none; // 👈 permite que los clics pasen al contenido de arriba
+}
+
+.content {
+    position: relative;
+    z-index: 1; // delante del canvas
+    padding: 2rem;
+    text-align: center;
+    color: white;
 }

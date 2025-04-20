@@ -1,7 +1,9 @@
-<p>home works!</p>
-<ngx-particles [id]="id" [options]="particlesOptions" (particlesLoaded)="particlesLoaded($event)">
-</ngx-particles>
+<div class="particles-container">
+    <ngx-particles [id]="id" [options]="particlesOptions" (particlesLoaded)="particlesLoaded($event)" />
+</div>
 
-<div class="contenido">
-    <h1>Bienvenido a mi página</h1>
+<!-- El contenido que irá por delante -->
+<div class="center">
+    <h1>Bienvenido</h1>
+    <button>Haz clic aquí</button>
 </div>
