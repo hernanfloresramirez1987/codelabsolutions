@@ -5,7 +5,7 @@ import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-br
 import { routes } from './app.routes';
 
 
-import { /*HttpClient,*/ provideHttpClient } from '@angular/common/http';
+import { /*HttpClient,*/ HttpClient, provideHttpClient } from '@angular/common/http';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
@@ -15,12 +15,30 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { CommonModule } from '@angular/common';
 import MyPreset from './mypreset';
 
+import {provideTranslateService, TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+
+const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (http: HttpClient) =>
+  new TranslateHttpLoader(http, './i18n/', '.json');
 
 export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(
       CommonModule, 
-      BrowserAnimationsModule, 
+      BrowserAnimationsModule,
+      [
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: httpLoaderFactory,
+            deps: [HttpClient],
+          },
+        })
+      ],
+      TranslateModule.forRoot({
+        defaultLanguage: 'es'
+      })
     ),
     provideHttpClient(),
     // providePrimeNG({ /* options */ }),
@@ -37,7 +55,10 @@ export const appConfig: ApplicationConfig = {
     MessageService,
     ConfirmationService,
     provideRouter(routes),
-    provideAnimations(),
-    provideAnimationsAsync()
+    // provideAnimations(),
+    provideAnimationsAsync(),
+    provideTranslateService({
+      defaultLanguage: 'en'
+     })
   ]
 };

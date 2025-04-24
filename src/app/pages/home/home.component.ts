@@ -79,7 +79,8 @@ export default class HomeComponent implements OnInit{
     },
     particles: {
       color: {
-        value: ["#34495e"], //"#000080", "#cccccc", "#dc143c", "#008000"]
+        // value: ["#34495e"], //"#000080", "#cccccc", "#dc143c", "#008000"]
+        value: "#6e0c29"
       },
       links: {
         color: "#444444",
@@ -126,7 +127,7 @@ export default class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.ngParticlesService.init(async (engine) => {
-      console.log(engine);
+      // console.log(engine);
 
       // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
       // this loads the tsparticles package bundle, it's the easiest method for getting everything ready

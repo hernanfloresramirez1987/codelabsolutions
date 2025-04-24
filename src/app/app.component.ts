@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 
 import { CarouselModule } from 'primeng/carousel';
+import { TranslateModule } from '@ngx-translate/core';
+import { TopbarComponent } from './pages/components/topbar/topbar.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,9 @@ import { CarouselModule } from 'primeng/carousel';
     AvatarModule,
     SidebarModule,
     FormsModule,
-    CarouselModule,   
+    CarouselModule,
+    TranslateModule,
+    TopbarComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -85,12 +89,12 @@ export class AppComponent {
               shortcut: '⌘+U',
           },
       ],
-  },
-  {
-    label: 'In Build',
-    icon: 'pi pi-search',
-    badge: '3',
-    items: [
+    },
+    {
+      label: 'In Build',
+      icon: 'pi pi-search',
+      badge: '3',
+      items: [
         {
             label: 'Core',
             icon: 'pi pi-bolt',
@@ -109,9 +113,15 @@ export class AppComponent {
             icon: 'pi pi-pencil',
             shortcut: '⌘+U',
         },
-    ],
-},
-];
+      ],
+    },
+  ];
+
+  constructor() {
+    // TranslateModule.forRoot({
+    //   defaultLanguage: 'es'
+    // })
+  }
 
   next() {
     this.currentIndex = (this.currentIndex + 1) % this.items.length;
