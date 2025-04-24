@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
@@ -7,7 +7,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 
 @Component({
   selector: 'app-topbar',
-  imports: [MenubarModule, ToolbarModule, RouterLink, AvatarModule, ButtonModule],
+  imports: [MenubarModule, ToolbarModule, RouterModule, AvatarModule, ButtonModule],
   templateUrl: './topbar.component.html',
   styleUrl: './topbar.component.scss'
 })
