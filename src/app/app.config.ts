@@ -27,18 +27,13 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       CommonModule, 
       BrowserAnimationsModule,
-      [
-        TranslateModule.forRoot({
-          loader: {
-            provide: TranslateLoader,
-            useFactory: httpLoaderFactory,
-            deps: [HttpClient],
-          },
-        })
-      ],
-      TranslateModule.forRoot({
-        defaultLanguage: 'es'
-      })
+      [TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: httpLoaderFactory,
+          deps: [HttpClient],
+        },
+      })]
     ),
     provideHttpClient(),
     // providePrimeNG({ /* options */ }),

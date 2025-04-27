@@ -5,7 +5,7 @@ import { ClickEvent, Container, HoverEvent, loadFont, MoveDirection, OutMode } f
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 
 import { NgParticlesService, NgxParticlesModule } from "@tsparticles/angular";
-import { ReplaySubject } from 'rxjs';
+import {TranslatePipe, TranslateDirective} from "@ngx-translate/core";
 
 
 
@@ -14,7 +14,7 @@ declare const particlesJS: any;
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgxParticlesModule],
+  imports: [NgxParticlesModule, TranslatePipe],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
