@@ -1,0 +1,1 @@
+import{Oa as o,ib as s,jb as p,yb as a}from"./chunk-P6BASMM2.js";var t=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=o({type:n,selectors:[["app-guest"]],decls:2,vars:0,template:function(e,m){e&1&&(s(0,"p"),a(1,"guest works!"),p())},encapsulation:2})};export{t as default};
